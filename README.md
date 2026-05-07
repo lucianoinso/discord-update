@@ -1,8 +1,8 @@
 # discord-update
-Downloads and updates Discord
+Downloads and updates Discord.
 
 ## Usage
-Add executable permissions after downloading (just once)
+Add executable permissions after downloading (only once)
 
 `chmod +x discord-update.sh`
 
