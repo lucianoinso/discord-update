@@ -2,11 +2,12 @@
 TMP_PATH="/tmp"
 DISCORD_PATH="${TMP_PATH}/discord.deb"
 
+
 get_latest_discord_version() {
     local url
     url=$(curl -Ls -o /dev/null -w '%{url_effective}' \
         "https://discord.com/api/download/stable?platform=linux&format=deb")
-    basename "$url" | sed -E 's/discord-([0-9.]+)\.deb/\1/'
+    basename "$url" .deb | sed 's/^discord-//'
 }
 
 get_installed_version() {
