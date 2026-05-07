@@ -23,7 +23,8 @@ update_available() {
 
 download_and_install() {
   URL="https://discord.com/api/download?platform=linux&format=deb"
-  sudo echo "Stopping Discord..."
+  sudo echo "Stopping Discord..." # We sudo here so that the user doesn't have
+                                  # to wait for the file to download.
   pkill -xi "discord"
   echo "Downloading update..."
   wget -q --show-progress -O $DISCORD_PATH $URL
@@ -32,10 +33,8 @@ download_and_install() {
   sudo dpkg -i $DISCORD_PATH
 }
 
-echo "Checking if update available..." # We sudo at the beginning so that
-                                       # the user inputs the password here
-                                       # and doesn't have to wait for the
-                                       # file to download.
+echo "Checking if update available..."
+
 if update_available; then
     download_and_install
     echo "Discord updated successfully!"
