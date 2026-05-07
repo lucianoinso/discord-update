@@ -1,2 +1,2 @@
 # discord-update
-Little script to update Discord
+Downloads and updates Discord
